@@ -1,0 +1,29 @@
+failed to solve: process "/bin/sh -c curl -L -s https://go.dev/dl/go${GO_VERSION}.linux-${TARGETARCH}.tar.gz | tar -C /usr/local -xz" did not complete successfully: exit code: 2
+root@chn-ml:/home/balasubramaniyan.d/LocalAI# vi Dockerfile
+root@chn-ml:/home/balasubramaniyan.d/LocalAI# docker-compose up -d
+[+] Running 1/1
+ ! api Warning                                                                                                                0.5s 
+[+] Building 38.9s (10/47)                                                                                          docker:default
+ => [api internal] load build definition from Dockerfile                                                                      0.0s
+ => => transferring dockerfile: 16.28kB                                                                                       0.0s
+ => [api internal] load metadata for docker.io/library/ubuntu:22.04                                                           0.8s
+ => [api internal] load .dockerignore                                                                                         0.0s
+ => => transferring context: 266B                                                                                             0.0s
+ => [api internal] load build context                                                                                         0.1s
+ => => transferring context: 54.44kB                                                                                          0.1s
+ => CACHED [api grpc 1/4] FROM docker.io/library/ubuntu:22.04@sha256:adbb90115a21969d2fe6fa7f9af4253e16d45f8d4c1e930182610c4  0.0s
+ => CACHED [api grpc 2/4] WORKDIR /build                                                                                      0.0s
+ => [api grpc 3/4] RUN apt-get update &&     apt-get install -y --no-install-recommends         ca-certificates         bui  29.0s
+ => [api requirements-core  2/12] RUN apt-get update &&     apt-get install -y --no-install-recommends         build-essent  36.4s
+ => CANCELED [api grpc 4/4] RUN git clone --recurse-submodules --jobs 4 -b v1.65.0 --depth 1 --shallow-submodules https://gi  9.0s
+ => ERROR [api requirements-core  3/12] RUN curl -L -s https://go.dev/dl/go1.22.5.linux-amd64.tar.gz | tar -C /usr/local -xz  0.6s
+------                                                                                                                             
+ > [api requirements-core  3/12] RUN curl -L -s https://go.dev/dl/go1.22.5.linux-amd64.tar.gz | tar -C /usr/local -xz:             
+0.498                                                                                                                              
+0.498 gzip: stdin: unexpected end of file                                                                                          
+0.499 tar: Child returned status 1                                                                                                 
+0.499 tar: Error is not recoverable: exiting now                                                                                   
+------                                                                                                                             
+failed to solve: process "/bin/sh -c curl -L -s https://go.dev/dl/go${GO_VERSION}.linux-${TARGETARCH}.tar.gz | tar -C /usr/local -xz" did not complete successfully: exit code: 2                                                                                     
+root@chn-ml:/home/balasubramaniyan.d/LocalAI#                                                                                      
+                                                
